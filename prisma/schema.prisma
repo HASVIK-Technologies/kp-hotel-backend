@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model StoredItem {
+  pk           String
+  sk           String
+  typeKey      String?
+  typeSort     String?
+  relationKey  String?
+  relationSort String?
+  data         Json
+
+  @@id([pk, sk])
+  @@index([typeKey, typeSort])
+  @@index([relationKey, relationSort])
+}
+
+model Counter {
+  name  String @id
+  value Int    @default(0)
+}
