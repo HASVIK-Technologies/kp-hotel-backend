@@ -34,22 +34,23 @@ export const isConditionFailed = (error: unknown): boolean =>
 const cleanJson = (value: unknown): Prisma.InputJsonValue =>
   JSON.parse(JSON.stringify(value)) as Prisma.InputJsonValue;
 
-const conditionSql = (condition: ItemCondition): Prisma.Sql[] => {
+const conditionSql = (condition: ItemCondition, column = "data"): Prisma.Sql[] => {
+  const dataColumn = Prisma.raw(column);
   const parts: Prisma.Sql[] = [];
   if (condition.exists === true) parts.push(Prisma.sql`TRUE`);
   if (condition.exists === false) parts.push(Prisma.sql`FALSE`);
   for (const [field, value] of Object.entries(condition.equals ?? {})) {
-    parts.push(Prisma.sql`data -> ${field} = ${JSON.stringify(value)}::jsonb`);
+    parts.push(Prisma.sql`${dataColumn} -> ${field} = ${JSON.stringify(value)}::jsonb`);
   }
-  for (const field of condition.absent ?? []) parts.push(Prisma.sql`NOT (data ? ${field})`);
+  for (const field of condition.absent ?? []) parts.push(Prisma.sql`NOT (${dataColumn} ? ${field})`);
   for (const [field, value] of Object.entries(condition.lessThan ?? {})) {
-    parts.push(Prisma.sql`data ->> ${field} < ${value}`);
+    parts.push(Prisma.sql`${dataColumn} ->> ${field} < ${value}`);
   }
   for (const [field, value] of Object.entries(condition.lessThanOrEqual ?? {})) {
-    parts.push(Prisma.sql`COALESCE((data ->> ${field})::numeric, 0) <= ${value}`);
+    parts.push(Prisma.sql`COALESCE((${dataColumn} ->> ${field})::numeric, 0) <= ${value}`);
   }
   for (const [field, value] of Object.entries(condition.greaterThanOrEqual ?? {})) {
-    parts.push(Prisma.sql`COALESCE((data ->> ${field})::numeric, 0) >= ${value}`);
+    parts.push(Prisma.sql`COALESCE((${dataColumn} ->> ${field})::numeric, 0) >= ${value}`);
   }
   if (condition.any?.length) {
     const alternatives = condition.any.map((item) => Prisma.sql`(${Prisma.join(conditionSql(item), " AND ")})`);
@@ -189,12 +190,21 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
     if (Object.keys(mutation.increment ?? {}).length > 0) {
       const initialData = cleanJson({ pk: key.pk, sk: key.sk, ...(mutation.set ?? {}) });
       const increments = cleanJson(mutation.increment);
-      const initialConditions = conditions.length ? Prisma.sql`WHERE ${Prisma.join(conditions, " AND ")}` : Prisma.empty;
-      const onConflict = [
-        Prisma.sql`data = ${value}`,
-        ...indexAssignments,
-      ];
-      const conflictCondition = conditions.length ? Prisma.sql` WHERE ${Prisma.join(conditions, " AND ")}` : Prisma.empty;
+      const initialConditionsSql = conditionSql(mutation.conditions ?? {}, "current.data");
+      const initialConditions = initialConditionsSql.length
+        ? Prisma.sql`WHERE ${Prisma.join(initialConditionsSql, " AND ")}`
+        : Prisma.empty;
+      const incrementAssignments: Prisma.Sql[] = [];
+      for (const [field, amount] of Object.entries(mutation.increment ?? {})) {
+        incrementAssignments.push(
+          Prisma.sql`data = "StoredItem".data || jsonb_build_object(${field}, COALESCE(("StoredItem".data ->> ${field})::numeric, 0) + ${amount})`,
+        );
+      }
+      const onConflict = [...incrementAssignments, ...indexAssignments];
+      const conflictConditionsSql = conditionSql(mutation.conditions ?? {}, '"StoredItem".data');
+      const conflictCondition = conflictConditionsSql.length
+        ? Prisma.sql` WHERE ${Prisma.join(conflictConditionsSql, " AND ")}`
+        : Prisma.empty;
       const count = await client.$executeRaw(
         Prisma.sql`INSERT INTO "StoredItem" (pk, sk, data)
           SELECT ${key.pk}, ${key.sk}, current.data || ${increments}::jsonb
