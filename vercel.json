@@ -1,9 +1,10 @@
+
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run db:generate && npm run build",
+  "buildCommand": "npm run build",
   "functions": {
     "api/index.ts": {
-      "includeFiles": "dist/**"
+      "maxDuration": 30
     }
   },
   "rewrites": [
