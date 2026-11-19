@@ -7,7 +7,7 @@ import { z } from "zod";
  */
 export const envSchema = z.object({
   STAGE: z.enum(["local", "dev", "prod"]).default("local"),
-  PORT: z.coerce.number().default(4000),
+  PORT: z.coerce.number().default(4001),
   AWS_REGION: z.string().default("ap-south-1"),
   DATABASE_URL: z.string().url().default("postgresql://postgres:postgres@localhost:5432/kphotel?schema=public"),
 
@@ -19,8 +19,8 @@ export const envSchema = z.object({
   MAIL_FROM: z.string().default("Hotel KP <no-reply@kphotel.com>"),
   STAFF_ALERT_EMAIL: z.string().default("kpgrouprasra@gmail.com"),
 
-  WEB_ORIGIN: z.string().default("http://localhost:3000"),
-  API_ORIGIN: z.string().default("http://localhost:4000"),
+  WEB_ORIGIN: z.string().default("http://localhost:3001"),
+  API_ORIGIN: z.string().default("http://localhost:4001"),
   COOKIE_DOMAIN: z.string().optional(),
 
   JWT_SECRET: z.string().min(16).default("dev-only-secret-change-me-please"),

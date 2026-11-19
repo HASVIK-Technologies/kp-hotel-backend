@@ -148,7 +148,7 @@ async function main() {
     "",
     "> **Generated file: do not edit by hand.** Regenerate with `npm run docs:api` (in `backend/`). Conventions, authentication,",
     "> error format and entity schemas are described in [API.md](API.md). Machine-readable spec: [openapi.json](openapi.json).",
-    "> A live, try-it-out version runs at `http://localhost:4000/api/docs` when the API is started locally.",
+    "> A live, try-it-out version runs at `http://localhost:4001/api/docs` when the API is started locally.",
     "",
     `Base URL: \`{API_ORIGIN}/${API_PREFIX}\` · ${count} endpoints`,
     "",

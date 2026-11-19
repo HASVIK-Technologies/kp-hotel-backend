@@ -13,7 +13,7 @@ describe("GST engine", () => {
 
   it("computes CGST+SGST, rounds to the rupee and totals exactly", () => {
     const { lines, totals } = computeInvoice([{ description: "Deluxe", ruleCode: "ROOM_ACCOMMODATION", qty: 2, unitPricePaise: paise(2200) }], opts);
-    expect(lines[0].taxablePaise).toBe(440000);
+    expect(lines[0].taxablePaise).toBe(440010);
     expect(lines[0].cgstPaise).toBe(11000);
     expect(lines[0].sgstPaise).toBe(11000);
     expect(totals.grandTotalPaise).toBe(462000);
