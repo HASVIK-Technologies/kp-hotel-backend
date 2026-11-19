@@ -1,6 +1,7 @@
 node_modules
 dist
 dist-lambda
+src/generated/prisma
 .data
 .data-test-*
 .env

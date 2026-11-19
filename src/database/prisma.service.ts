@@ -1,5 +1,5 @@
 import { Injectable, Logger, OnModuleDestroy, OnModuleInit } from "@nestjs/common";
-import { Prisma, PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "../generated/prisma";
 import { AppConfig } from "../config/app-config.service";
 
 export type Item = Record<string, unknown> & { pk: string; sk: string };

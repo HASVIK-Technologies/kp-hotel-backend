@@ -14,7 +14,7 @@ export async function bootTestApp() {
   const originalSchema = rootUrl.searchParams.get("schema") ?? "public";
   rootUrl.searchParams.set("schema", originalSchema);
 
-  const { PrismaClient } = await import("@prisma/client");
+  const { PrismaClient } = await import("../../src/generated/prisma");
   const provisioner = new PrismaClient({ datasources: { db: { url: rootUrl.toString() } } });
   await provisioner.$connect();
   await provisioner.$executeRawUnsafe(`CREATE SCHEMA "${stamp}"`);
