@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run db:generate && npm run build",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api?__vercel_path=/api/:path*"
+    }
+  ]
+}
