@@ -5,7 +5,7 @@
   "functions": {
     "api/index.ts": {
       "maxDuration": 30,
-      "includeFiles": "src/generated/prisma/**"
+      "includeFiles": "src/generated/prisma/**/*"
     }
   },
   "rewrites": [
