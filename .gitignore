@@ -1,6 +1,7 @@
 node_modules
 dist
 dist-lambda
+dist-vercel
 .data
 .data-test-*
 .env

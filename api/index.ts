@@ -8,12 +8,14 @@ import type {
 
 import type { NestExpressApplication } from "@nestjs/platform-express";
 
-import { createApp } from "../src/bootstrap";
-
 type ExpressHandler = (
   req: IncomingMessage,
   res: ServerResponse,
 ) => void;
+
+const { createApp } = require("../dist-vercel/bootstrap.js") as {
+  createApp: () => Promise<NestExpressApplication>;
+};
 
 let expressHandler: Promise<ExpressHandler> | undefined;
 
