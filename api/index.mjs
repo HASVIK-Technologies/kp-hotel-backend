@@ -1,37 +1,24 @@
 
 import "reflect-metadata";
+import bootstrap from "../dist-vercel/bootstrap.cjs";
 
-import type {
-  IncomingMessage,
-  ServerResponse,
-} from "node:http";
+const { createApp } = bootstrap;
 
-import type { NestExpressApplication } from "@nestjs/platform-express";
+let expressHandler;
 
-type ExpressHandler = (
-  req: IncomingMessage,
-  res: ServerResponse,
-) => void;
-
-const { createApp } = require("../dist-vercel/bootstrap.js") as {
-  createApp: () => Promise<NestExpressApplication>;
-};
-
-let expressHandler: Promise<ExpressHandler> | undefined;
-
-async function getExpressHandler(): Promise<ExpressHandler> {
+async function getExpressHandler() {
   if (!expressHandler) {
     expressHandler = (async () => {
       console.log("[VERCEL] Initializing NestJS");
 
-      const app: NestExpressApplication = await createApp();
+      const app = await createApp();
 
       await app.init();
 
       console.log("[VERCEL] NestJS initialized");
 
-      return app.getHttpAdapter().getInstance() as ExpressHandler;
-    })().catch((error: unknown) => {
+      return app.getHttpAdapter().getInstance();
+    })().catch((error) => {
       expressHandler = undefined;
       console.error("[VERCEL] Bootstrap failed:", error);
       throw error;
@@ -41,10 +28,7 @@ async function getExpressHandler(): Promise<ExpressHandler> {
   return expressHandler;
 }
 
-export default async function handler(
-  req: IncomingMessage,
-  res: ServerResponse,
-): Promise<void> {
+export default async function handler(req, res) {
   try {
     const rewrittenUrl = new URL(
       req.url ?? "/",

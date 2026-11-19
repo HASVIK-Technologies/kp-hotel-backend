@@ -5,7 +5,7 @@ await mkdir("dist-vercel/assets/fonts", { recursive: true });
 
 await build({
   entryPoints: ["dist/bootstrap.js"],
-  outfile: "dist-vercel/bootstrap.js",
+  outfile: "dist-vercel/bootstrap.cjs",
   bundle: true,
   platform: "node",
   target: "node22",
