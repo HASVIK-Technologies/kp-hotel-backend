@@ -1,6 +1,6 @@
 import { createZodDto } from "nestjs-zod";
 import { z } from "zod";
-import { emailSchema, optionalText } from "@/common/validation/primitives";
+import { emailSchema, optionalText } from "../../../common/validation/primitives";
 
 export const settingsSchema = z
   .object({

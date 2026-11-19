@@ -1,7 +1,7 @@
 import { createZodDto } from "nestjs-zod";
 import { z } from "zod";
-import { namedDto } from "@/common/validation/named-dto";
-import { emailSchema, isoDateSchema, mobileSchema, nameSchema, optionalText } from "@/common/validation/primitives";
+import { namedDto } from "../../../common/validation/named-dto";
+import { emailSchema, isoDateSchema, mobileSchema, nameSchema, optionalText } from "../../../common/validation/primitives";
 
 /** One endpoint, four kinds of enquiry, discriminated by `kind`. */
 export const createEnquirySchema = z.discriminatedUnion("kind", [

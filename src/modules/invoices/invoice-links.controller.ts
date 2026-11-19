@@ -1,9 +1,9 @@
 import { Controller, Get, HttpCode, Param, Post, Query, Res } from "@nestjs/common";
 import { ApiOperation, ApiQuery, ApiTags } from "@nestjs/swagger";
 import type { Response } from "express";
-import { AppException, NotFoundAppException } from "@/common/errors/app.exception";
-import { TokensService } from "@/modules/auth/tokens.service";
-import { StorageService } from "@/modules/storage/storage.service";
+import { AppException, NotFoundAppException } from "../../common/errors/app.exception";
+import { TokensService } from "../auth/tokens.service";
+import { StorageService } from "../storage/storage.service";
 import { InvoicePayLinkService } from "./invoice-pay-link.service";
 import { InvoicesService } from "./invoices.service";
 import { PdfService } from "./pdf.service";

@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService, isConditionFailed } from "@/database/prisma.service";
-import { stripKeys } from "@/common/utils/storage-item.util";
+import { PrismaService, isConditionFailed } from "../../database/prisma.service";
+import { stripKeys } from "../../common/utils/storage-item.util";
 import type { Customer } from "./customer.types";
 
 @Injectable()

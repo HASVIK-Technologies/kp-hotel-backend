@@ -1,10 +1,10 @@
 import { CanActivate, ExecutionContext, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import type { Request } from "express";
-import { AppException, ForbiddenAppException } from "@/common/errors/app.exception";
-import { can, type Permission } from "@/common/constants/permissions";
-import { CSRF_HEADER, SESSION_COOKIE } from "@/common/constants/http";
-import { PERMISSION_KEY } from "@/common/decorators/require-permission.decorator";
+import { AppException, ForbiddenAppException } from "../../../common/errors/app.exception";
+import { can, type Permission } from "../../../common/constants/permissions";
+import { CSRF_HEADER, SESSION_COOKIE } from "../../../common/constants/http";
+import { PERMISSION_KEY } from "../../../common/decorators/require-permission.decorator";
 import { TokensService } from "../tokens.service";
 
 /**

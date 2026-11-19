@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import { randomUUID } from "node:crypto";
-import { AppConfig } from "@/config/app-config.service";
-import { PrismaService, isConditionFailed } from "@/database/prisma.service";
-import { NotFoundAppException } from "@/common/errors/app.exception";
-import { stripKeys } from "@/common/utils/storage-item.util";
-import { MailService } from "@/modules/mail/mail.service";
-import { MailTemplates } from "@/modules/mail/mail.templates";
+import { AppConfig } from "../../config/app-config.service";
+import { PrismaService, isConditionFailed } from "../../database/prisma.service";
+import { NotFoundAppException } from "../../common/errors/app.exception";
+import { stripKeys } from "../../common/utils/storage-item.util";
+import { MailService } from "../mail/mail.service";
+import { MailTemplates } from "../mail/mail.templates";
 import type { CreateEnquiryDto } from "./dto/enquiry.dto";
 import type { Enquiry } from "./enquiry.types";
 

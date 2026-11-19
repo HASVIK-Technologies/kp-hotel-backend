@@ -1,10 +1,10 @@
 import { Body, Controller, Get, Headers, HttpCode, Param, Post, Query, Req } from "@nestjs/common";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
 import type { Request } from "express";
-import { AppConfig } from "@/config/app-config.service";
-import { AppException } from "@/common/errors/app.exception";
-import { TokensService } from "@/modules/auth/tokens.service";
-import { CashfreeService } from "@/modules/gateway/cashfree.service";
+import { AppConfig } from "../../config/app-config.service";
+import { AppException } from "../../common/errors/app.exception";
+import { TokensService } from "../auth/tokens.service";
+import { CashfreeService } from "../gateway/cashfree.service";
 import { MockCompleteDto } from "./dto/payment.dto";
 import { SettlementService } from "./settlement.service";
 

@@ -1,4 +1,4 @@
-import type { Line, Totals } from "@/domain/tax";
+import type { Line, Totals } from "../../domain/tax";
 
 /** Invoice, ledger and payment records. All money is integer paise. */
 

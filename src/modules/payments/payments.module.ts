@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
-import { BookingsModule } from "@/modules/bookings/bookings.module";
-import { GatewayModule } from "@/modules/gateway/gateway.module";
-import { InvoicesModule } from "@/modules/invoices/invoices.module";
+import { BookingsModule } from "../bookings/bookings.module";
+import { GatewayModule } from "../gateway/gateway.module";
+import { InvoicesModule } from "../invoices/invoices.module";
 import { PaymentsController } from "./payments.controller";
 import { SettlementService } from "./settlement.service";
 

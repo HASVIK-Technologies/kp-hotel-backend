@@ -1,10 +1,10 @@
 import { Body, Controller, HttpCode, Post } from "@nestjs/common";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
-import { NotFoundAppException } from "@/common/errors/app.exception";
-import { buildQuote } from "@/domain/pricing/pricing";
-import { InventoryService } from "@/modules/rooms/inventory.service";
-import { RoomsService } from "@/modules/rooms/rooms.service";
-import { SettingsService } from "@/modules/settings/settings.service";
+import { NotFoundAppException } from "../../common/errors/app.exception";
+import { buildQuote } from "../../domain/pricing/pricing";
+import { InventoryService } from "../rooms/inventory.service";
+import { RoomsService } from "../rooms/rooms.service";
+import { SettingsService } from "../settings/settings.service";
 import { QuoteDto } from "./dto/quote.dto";
 
 @ApiTags("Quotes (public)")

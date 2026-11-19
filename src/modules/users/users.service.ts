@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import type { Role } from "@/common/constants/permissions";
+import type { Role } from "../../common/constants/permissions";
 import { PasswordService } from "./password.service";
 import { UsersRepository } from "./users.repository";
 

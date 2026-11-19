@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
 import { jwtVerify, SignJWT } from "jose";
-import { AppConfig } from "@/config/app-config.service";
-import { SESSION_HOURS } from "@/common/constants/http";
-import type { Role } from "@/common/constants/permissions";
-import type { SessionUser } from "@/common/types/session-user";
+import { AppConfig } from "../../config/app-config.service";
+import { SESSION_HOURS } from "../../common/constants/http";
+import type { Role } from "../../common/constants/permissions";
+import type { SessionUser } from "../../common/types/session-user";
 
 export type LinkKind = "invoice" | "pay" | "booking";
 

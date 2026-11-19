@@ -1,5 +1,5 @@
 import { differenceInCalendarDays, parseISO } from "date-fns";
-import { computeInvoice, DEFAULT_TAX_RULES, type Line, type LineInput, type TaxRule, type Totals } from "@/domain/tax";
+import { computeInvoice, DEFAULT_TAX_RULES, type Line, type LineInput, type TaxRule, type Totals } from "../tax";
 import { ADDONS, PROMOS, RATE_PLANS } from "./catalog";
 
 /**

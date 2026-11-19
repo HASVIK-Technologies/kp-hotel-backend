@@ -2,7 +2,7 @@ import { Injectable, Logger } from "@nestjs/common";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import nodemailer, { type Transporter } from "nodemailer";
-import { AppConfig } from "@/config/app-config.service";
+import { AppConfig } from "../../config/app-config.service";
 
 export interface Mail {
   to: string | string[];

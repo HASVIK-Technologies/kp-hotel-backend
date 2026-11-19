@@ -2,8 +2,8 @@ import { Controller, Get, Query, UseGuards } from "@nestjs/common";
 import { ApiCookieAuth, ApiOperation, ApiQuery, ApiTags } from "@nestjs/swagger";
 import { createZodDto } from "nestjs-zod";
 import { z } from "zod";
-import { RequirePermission } from "@/common/decorators/require-permission.decorator";
-import { StaffGuard } from "@/modules/auth/guards/staff.guard";
+import { RequirePermission } from "../../common/decorators/require-permission.decorator";
+import { StaffGuard } from "../auth/guards/staff.guard";
 import { ReportsService } from "./reports.service";
 
 const rangeSchema = z.object({

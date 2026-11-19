@@ -1,12 +1,12 @@
 import { Body, Controller, Get, HttpCode, Post, Res, UseGuards } from "@nestjs/common";
 import { ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import type { Response } from "express";
-import { AppConfig } from "@/config/app-config.service";
-import { AppException } from "@/common/errors/app.exception";
-import { SESSION_COOKIE, SESSION_HOURS } from "@/common/constants/http";
-import { CurrentUser } from "@/common/decorators/current-user.decorator";
-import type { SessionUser } from "@/common/types/session-user";
-import { AuditService } from "@/modules/audit/audit.service";
+import { AppConfig } from "../../config/app-config.service";
+import { AppException } from "../../common/errors/app.exception";
+import { SESSION_COOKIE, SESSION_HOURS } from "../../common/constants/http";
+import { CurrentUser } from "../../common/decorators/current-user.decorator";
+import type { SessionUser } from "../../common/types/session-user";
+import { AuditService } from "../audit/audit.service";
 import { AuthService } from "./auth.service";
 import { TokensService } from "./tokens.service";
 import { StaffGuard } from "./guards/staff.guard";

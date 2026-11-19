@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { createHmac, timingSafeEqual } from "node:crypto";
-import { AppConfig } from "@/config/app-config.service";
-import { PrismaService } from "@/database/prisma.service";
+import { AppConfig } from "../../config/app-config.service";
+import { PrismaService } from "../../database/prisma.service";
 
 /**
  * Cashfree Payment Gateway (PG) adapter.

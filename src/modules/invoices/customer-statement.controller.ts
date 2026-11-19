@@ -1,7 +1,7 @@
 import { Controller, Get, Param, UseGuards } from "@nestjs/common";
 import { ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
-import { StaffGuard } from "@/modules/auth/guards/staff.guard";
-import { CustomersService } from "@/modules/customers/customers.service";
+import { StaffGuard } from "../auth/guards/staff.guard";
+import { CustomersService } from "../customers/customers.service";
 import { InvoicesService } from "./invoices.service";
 
 /** A customer's account statement. Lives with invoices because it is built from their ledgers. */

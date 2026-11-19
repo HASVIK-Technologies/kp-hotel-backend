@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
-import { ValidationAppException } from "@/common/errors/app.exception";
-import { computeInvoice, paise, stateCodeOf } from "@/domain/tax";
-import { CustomersService } from "@/modules/customers/customers.service";
-import { SettingsService } from "@/modules/settings/settings.service";
-import { AuditService } from "@/modules/audit/audit.service";
+import { ValidationAppException } from "../../common/errors/app.exception";
+import { computeInvoice, paise, stateCodeOf } from "../../domain/tax";
+import { CustomersService } from "../customers/customers.service";
+import { SettingsService } from "../settings/settings.service";
+import { AuditService } from "../audit/audit.service";
 import { InvoiceDeliveryService } from "./invoice-delivery.service";
 import { InvoicesService } from "./invoices.service";
 import type { CreateInvoiceDto, PreviewInvoiceDto } from "./dto/invoice.dto";

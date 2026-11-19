@@ -2,13 +2,13 @@ import { Body, Controller, Get, HttpCode, Param, Post, Query, Res, UseGuards } f
 import { ApiBody, ApiCookieAuth, ApiOperation, ApiQuery, ApiTags } from "@nestjs/swagger";
 import { ZodValidationPipe } from "nestjs-zod";
 import type { Response } from "express";
-import { NotFoundAppException } from "@/common/errors/app.exception";
-import { CurrentUser } from "@/common/decorators/current-user.decorator";
-import { RequirePermission } from "@/common/decorators/require-permission.decorator";
-import type { SessionUser } from "@/common/types/session-user";
-import { paise } from "@/domain/tax";
-import { StaffGuard } from "@/modules/auth/guards/staff.guard";
-import { AuditService } from "@/modules/audit/audit.service";
+import { NotFoundAppException } from "../../common/errors/app.exception";
+import { CurrentUser } from "../../common/decorators/current-user.decorator";
+import { RequirePermission } from "../../common/decorators/require-permission.decorator";
+import type { SessionUser } from "../../common/types/session-user";
+import { paise } from "../../domain/tax";
+import { StaffGuard } from "../auth/guards/staff.guard";
+import { AuditService } from "../audit/audit.service";
 import { CreateInvoiceDto, CreditNoteDto, EmailInvoiceDto, PreviewInvoiceDto, RefundDto } from "./dto/invoice.dto";
 import { RecordPaymentDto, ResolveChequeDto } from "./dto/payment.dto";
 import { InvoiceComposerService } from "./invoice-composer.service";
@@ -16,7 +16,7 @@ import { InvoiceDeliveryService } from "./invoice-delivery.service";
 import { InvoicesService } from "./invoices.service";
 import { LedgerService } from "./ledger.service";
 import { PdfService } from "./pdf.service";
-import { StorageService } from "@/modules/storage/storage.service";
+import { StorageService } from "../storage/storage.service";
 
 @ApiTags("Admin · Invoices & payments")
 @ApiCookieAuth()

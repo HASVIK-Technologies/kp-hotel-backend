@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
-import { BookingsModule } from "@/modules/bookings/bookings.module";
-import { EnquiriesModule } from "@/modules/enquiries/enquiries.module";
-import { InvoicesModule } from "@/modules/invoices/invoices.module";
-import { RoomsModule } from "@/modules/rooms/rooms.module";
+import { BookingsModule } from "../bookings/bookings.module";
+import { EnquiriesModule } from "../enquiries/enquiries.module";
+import { InvoicesModule } from "../invoices/invoices.module";
+import { RoomsModule } from "../rooms/rooms.module";
 import { ReportsController } from "./reports.controller";
 import { ReportsService } from "./reports.service";
 

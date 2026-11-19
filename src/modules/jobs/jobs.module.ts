@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common";
-import { BookingsModule } from "@/modules/bookings/bookings.module";
-import { InvoicesModule } from "@/modules/invoices/invoices.module";
+import { BookingsModule } from "../bookings/bookings.module";
+import { InvoicesModule } from "../invoices/invoices.module";
 import { JobsController } from "./jobs.controller";
 import { JobsService } from "./jobs.service";
 

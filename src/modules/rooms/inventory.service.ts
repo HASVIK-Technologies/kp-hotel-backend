@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService, isConditionFailed } from "@/database/prisma.service";
-import { AppException, SoldOutException } from "@/common/errors/app.exception";
+import { PrismaService, isConditionFailed } from "../../database/prisma.service";
+import { AppException, SoldOutException } from "../../common/errors/app.exception";
 import { RoomsService } from "./rooms.service";
 
 export const nightsList = (checkIn: string, checkOut: string): string[] => {

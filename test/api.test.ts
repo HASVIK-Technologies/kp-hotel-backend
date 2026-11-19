@@ -39,8 +39,8 @@ const newRoom = {
 beforeAll(async () => {
   t = await bootTestApp();
   http = request(t.app.getHttpServer());
-  const { SeedService } = await import("@/modules/seed/seed.service");
-  const { UsersService } = await import("@/modules/users/users.service");
+  const { SeedService } = await import("../src/modules/seed/seed.service");
+  const { UsersService } = await import("../src/modules/users/users.service");
   await t.get(SeedService).ensureOwner("owner@test.com", "OwnerPass@2026", "Owner Person");
   await t.get(UsersService).create({ email: "desk@test.com", name: "Desk Person", role: "frontdesk", password: "DeskPass@2026" });
   ownerCookie.push(...(await login("owner@test.com", "OwnerPass@2026")));

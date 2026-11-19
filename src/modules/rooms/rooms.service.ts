@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { DuplicateException, NotFoundAppException } from "@/common/errors/app.exception";
+import { DuplicateException, NotFoundAppException } from "../../common/errors/app.exception";
 import { RoomsRepository } from "./rooms.repository";
 import type { Room } from "./room.types";
 import type { CreateRoomDto, UpdateRoomDto } from "./dto/room.dto";

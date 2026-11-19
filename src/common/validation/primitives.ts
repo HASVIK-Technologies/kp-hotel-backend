@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { gstinChecksumOk } from "@/domain/tax/gstin";
+import { gstinChecksumOk } from "../../domain/tax/gstin";
 
 /**
  * Reusable Zod building blocks for every DTO. The frontend keeps its own mirror of the

@@ -1,10 +1,10 @@
 import { Body, Controller, Get, HttpCode, Param, Patch, Post, UseGuards } from "@nestjs/common";
 import { ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
-import { CurrentUser } from "@/common/decorators/current-user.decorator";
-import { RequirePermission } from "@/common/decorators/require-permission.decorator";
-import type { SessionUser } from "@/common/types/session-user";
-import { StaffGuard } from "@/modules/auth/guards/staff.guard";
-import { AuditService } from "@/modules/audit/audit.service";
+import { CurrentUser } from "../../common/decorators/current-user.decorator";
+import { RequirePermission } from "../../common/decorators/require-permission.decorator";
+import type { SessionUser } from "../../common/types/session-user";
+import { StaffGuard } from "../auth/guards/staff.guard";
+import { AuditService } from "../audit/audit.service";
 import { CreateUserDto, UpdateUserDto } from "./dto/user.dto";
 import { UsersService } from "./users.service";
 

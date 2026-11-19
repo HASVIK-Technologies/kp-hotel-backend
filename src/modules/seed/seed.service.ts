@@ -1,14 +1,14 @@
 import { Injectable, Logger } from "@nestjs/common";
 import { addDays, format } from "date-fns";
-import { AppConfig } from "@/config/app-config.service";
-import { paise } from "@/domain/tax";
-import { BookingsService } from "@/modules/bookings/bookings.service";
-import { CustomersService } from "@/modules/customers/customers.service";
-import { InvoicesService } from "@/modules/invoices/invoices.service";
-import { LedgerService } from "@/modules/invoices/ledger.service";
-import { DEFAULT_ROOMS } from "@/modules/rooms/default-rooms";
-import { RoomsRepository } from "@/modules/rooms/rooms.repository";
-import { UsersService } from "@/modules/users/users.service";
+import { AppConfig } from "../../config/app-config.service";
+import { paise } from "../../domain/tax";
+import { BookingsService } from "../bookings/bookings.service";
+import { CustomersService } from "../customers/customers.service";
+import { InvoicesService } from "../invoices/invoices.service";
+import { LedgerService } from "../invoices/ledger.service";
+import { DEFAULT_ROOMS } from "../rooms/default-rooms";
+import { RoomsRepository } from "../rooms/rooms.repository";
+import { UsersService } from "../users/users.service";
 
 export const OWNER = { email: "admin@kphotel.com", password: "KpAdmin@2026", name: "Priya Sharma" };
 

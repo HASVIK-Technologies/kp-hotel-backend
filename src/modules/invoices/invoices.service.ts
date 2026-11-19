@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
 import { createHash, randomUUID } from "node:crypto";
-import { addDaysIso, istToday } from "@/common/utils/time.util";
-import { amountInWords, computeInvoice, stateCodeOf, type Discount, type LineInput } from "@/domain/tax";
-import { SettingsService } from "@/modules/settings/settings.service";
-import { StorageService } from "@/modules/storage/storage.service";
+import { addDaysIso, istToday } from "../../common/utils/time.util";
+import { amountInWords, computeInvoice, stateCodeOf, type Discount, type LineInput } from "../../domain/tax";
+import { SettingsService } from "../settings/settings.service";
+import { StorageService } from "../storage/storage.service";
 import { PdfService } from "./pdf.service";
 import { InvoicesRepository } from "./invoices.repository";
 import type { DocType, Invoice, Ledger, Party, Payment } from "./invoice.types";

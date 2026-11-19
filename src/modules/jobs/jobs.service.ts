@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
-import { AppConfig } from "@/config/app-config.service";
-import { TokensService } from "@/modules/auth/tokens.service";
-import { BookingsService } from "@/modules/bookings/bookings.service";
-import { InvoicesRepository } from "@/modules/invoices/invoices.repository";
-import { InvoicesService } from "@/modules/invoices/invoices.service";
-import { MailService } from "@/modules/mail/mail.service";
-import { MailTemplates } from "@/modules/mail/mail.templates";
+import { AppConfig } from "../../config/app-config.service";
+import { TokensService } from "../auth/tokens.service";
+import { BookingsService } from "../bookings/bookings.service";
+import { InvoicesRepository } from "../invoices/invoices.repository";
+import { InvoicesService } from "../invoices/invoices.service";
+import { MailService } from "../mail/mail.service";
+import { MailTemplates } from "../mail/mail.templates";
 
 /** Scheduled work. In AWS, EventBridge Scheduler invokes the Lambda with `{ "job": "release-holds" | "reminders" }`. */
 @Injectable()

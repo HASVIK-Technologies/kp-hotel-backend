@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import type { SessionUser } from "@/common/types/session-user";
-import type { Role } from "@/common/constants/permissions";
-import { PasswordService } from "@/modules/users/password.service";
-import { UsersRepository } from "@/modules/users/users.repository";
+import type { SessionUser } from "../../common/types/session-user";
+import type { Role } from "../../common/constants/permissions";
+import { PasswordService } from "../users/password.service";
+import { UsersRepository } from "../users/users.repository";
 
 export type LoginResult = { user: SessionUser } | { error: string };
 

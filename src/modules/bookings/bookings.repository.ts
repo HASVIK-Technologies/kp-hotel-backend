@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService, isConditionFailed } from "@/database/prisma.service";
-import { stripKeys } from "@/common/utils/storage-item.util";
-import type { TaxRule } from "@/domain/tax";
+import { PrismaService, isConditionFailed } from "../../database/prisma.service";
+import { stripKeys } from "../../common/utils/storage-item.util";
+import type { TaxRule } from "../../domain/tax";
 import type { Booking, BookingStatus } from "./booking.types";
 
 /** A booking as stored: the public fields plus internal pricing/bookkeeping fields that never leave the API. */

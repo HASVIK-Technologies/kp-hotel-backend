@@ -1,7 +1,7 @@
 import { Controller, HttpCode, Post, UseGuards } from "@nestjs/common";
 import { ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
-import { RequirePermission } from "@/common/decorators/require-permission.decorator";
-import { StaffGuard } from "@/modules/auth/guards/staff.guard";
+import { RequirePermission } from "../../common/decorators/require-permission.decorator";
+import { StaffGuard } from "../auth/guards/staff.guard";
 import { JobsService } from "./jobs.service";
 
 @ApiTags("Admin · Jobs")

@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { AppConfig } from "@/config/app-config.service";
-import type { Booking } from "@/modules/bookings/booking.types";
-import type { Invoice, Ledger, Payment } from "@/modules/invoices/invoice.types";
+import { AppConfig } from "../../config/app-config.service";
+import type { Booking } from "../bookings/booking.types";
+import type { Invoice, Ledger, Payment } from "../invoices/invoice.types";
 
 const esc = (s: unknown) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 export const inr = (paise: number) => `₹${(paise / 100).toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;

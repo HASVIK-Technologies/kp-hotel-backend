@@ -1,10 +1,10 @@
 import { Body, Controller, Get, HttpCode, Param, Post, Query } from "@nestjs/common";
 import { ApiOperation, ApiQuery, ApiTags } from "@nestjs/swagger";
-import { AppConfig } from "@/config/app-config.service";
-import { NotFoundAppException } from "@/common/errors/app.exception";
-import { TokensService } from "@/modules/auth/tokens.service";
-import { InvoiceDeliveryService } from "@/modules/invoices/invoice-delivery.service";
-import { InvoicesService } from "@/modules/invoices/invoices.service";
+import { AppConfig } from "../../config/app-config.service";
+import { NotFoundAppException } from "../../common/errors/app.exception";
+import { TokensService } from "../auth/tokens.service";
+import { InvoiceDeliveryService } from "../invoices/invoice-delivery.service";
+import { InvoicesService } from "../invoices/invoices.service";
 import { toPublicBooking } from "./booking.mapper";
 import { BookingsService } from "./bookings.service";
 import { CreateBookingDto } from "./dto/booking.dto";

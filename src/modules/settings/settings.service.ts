@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { AppConfig } from "@/config/app-config.service";
-import { PrismaService } from "@/database/prisma.service";
-import { DEFAULT_TAX_RULES, type TaxRule } from "@/domain/tax";
+import { AppConfig } from "../../config/app-config.service";
+import { PrismaService } from "../../database/prisma.service";
+import { DEFAULT_TAX_RULES, type TaxRule } from "../../domain/tax";
 
 export interface HotelSettings {
   name: string;

@@ -14,15 +14,15 @@ beforeAll(async () => {
   t = await bootTestApp();
   const [{ BookingsService }, { SettlementService }, { InvoicesService }, { LedgerService }, { InventoryService }, { CashfreeService }, { StorageService }, { UsersService }, { AuthService }] =
     await Promise.all([
-      import("@/modules/bookings/bookings.service"),
-      import("@/modules/payments/settlement.service"),
-      import("@/modules/invoices/invoices.service"),
-      import("@/modules/invoices/ledger.service"),
-      import("@/modules/rooms/inventory.service"),
-      import("@/modules/gateway/cashfree.service"),
-      import("@/modules/storage/storage.service"),
-      import("@/modules/users/users.service"),
-      import("@/modules/auth/auth.service"),
+      import("../src/modules/bookings/bookings.service"),
+      import("../src/modules/payments/settlement.service"),
+      import("../src/modules/invoices/invoices.service"),
+      import("../src/modules/invoices/ledger.service"),
+      import("../src/modules/rooms/inventory.service"),
+      import("../src/modules/gateway/cashfree.service"),
+      import("../src/modules/storage/storage.service"),
+      import("../src/modules/users/users.service"),
+      import("../src/modules/auth/auth.service"),
     ]);
   s = {
     bookings: t.get(BookingsService),

@@ -1,6 +1,6 @@
 import { createZodDto } from "nestjs-zod";
 import { z } from "zod";
-import { emailSchema, gstinSchema, isoDateSchema, moneySchema, nameSchema, optionalText } from "@/common/validation/primitives";
+import { emailSchema, gstinSchema, isoDateSchema, moneySchema, nameSchema, optionalText } from "../../../common/validation/primitives";
 
 export const invoiceSchema = z
   .object({

@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import { AppConfig } from "@/config/app-config.service";
-import { AppException, NotFoundAppException } from "@/common/errors/app.exception";
-import { CashfreeService } from "@/modules/gateway/cashfree.service";
-import { PaymentOrdersRepository } from "@/modules/gateway/payment-orders.repository";
+import { AppConfig } from "../../config/app-config.service";
+import { AppException, NotFoundAppException } from "../../common/errors/app.exception";
+import { CashfreeService } from "../gateway/cashfree.service";
+import { PaymentOrdersRepository } from "../gateway/payment-orders.repository";
 import { InvoicesService } from "./invoices.service";
 
 /** Starts an online (gateway) payment for the outstanding balance of an invoice. */

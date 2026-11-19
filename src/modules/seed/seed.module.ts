@@ -1,9 +1,9 @@
 import { Module } from "@nestjs/common";
-import { BookingsModule } from "@/modules/bookings/bookings.module";
-import { CustomersModule } from "@/modules/customers/customers.module";
-import { InvoicesModule } from "@/modules/invoices/invoices.module";
-import { RoomsModule } from "@/modules/rooms/rooms.module";
-import { UsersModule } from "@/modules/users/users.module";
+import { BookingsModule } from "../bookings/bookings.module";
+import { CustomersModule } from "../customers/customers.module";
+import { InvoicesModule } from "../invoices/invoices.module";
+import { RoomsModule } from "../rooms/rooms.module";
+import { UsersModule } from "../users/users.module";
 import { SeedService } from "./seed.service";
 
 @Module({

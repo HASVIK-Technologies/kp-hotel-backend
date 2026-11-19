@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { randomUUID } from "node:crypto";
-import { BillingException } from "@/common/errors/app.exception";
-import { isConditionFailed } from "@/database/prisma.service";
-import type { LineInput } from "@/domain/tax";
+import { BillingException } from "../../common/errors/app.exception";
+import { isConditionFailed } from "../../database/prisma.service";
+import type { LineInput } from "../../domain/tax";
 import { InvoicesRepository } from "./invoices.repository";
 import { financialYear, InvoicesService } from "./invoices.service";
 import type { Invoice, Ledger, Payment, PaymentMethod } from "./invoice.types";

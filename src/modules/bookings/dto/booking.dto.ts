@@ -1,8 +1,8 @@
 import { createZodDto } from "nestjs-zod";
 import { z } from "zod";
 import { parseISO } from "date-fns";
-import { istToday } from "@/common/utils/time.util";
-import { emailSchema, gstinSchema, mobileSchema, nameSchema, optionalText } from "@/common/validation/primitives";
+import { istToday } from "../../../common/utils/time.util";
+import { emailSchema, gstinSchema, mobileSchema, nameSchema, optionalText } from "../../../common/validation/primitives";
 
 export const guestSchema = z.object({
   name: nameSchema,

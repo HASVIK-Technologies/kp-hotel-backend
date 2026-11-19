@@ -32,8 +32,8 @@ export async function bootTestApp() {
   process.env.DATA_DIR = `.data-test-${stamp}`;
   process.env.SEED_DEMO = "0";
 
-  const { createApp } = await import("@/bootstrap");
-  const { SeedService } = await import("@/modules/seed/seed.service");
+  const { createApp } = await import("../../src/bootstrap");
+  const { SeedService } = await import("../../src/modules/seed/seed.service");
   const app: INestApplication = await createApp();
   await app.init();
   await app.get(SeedService).ensureDefaultRooms();

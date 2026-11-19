@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
-import { istDate, istToday } from "@/common/utils/time.util";
-import { BookingsService } from "@/modules/bookings/bookings.service";
-import { EnquiriesService } from "@/modules/enquiries/enquiries.service";
-import { InvoicesService } from "@/modules/invoices/invoices.service";
-import { RoomsService } from "@/modules/rooms/rooms.service";
+import { istDate, istToday } from "../../common/utils/time.util";
+import { BookingsService } from "../bookings/bookings.service";
+import { EnquiriesService } from "../enquiries/enquiries.service";
+import { InvoicesService } from "../invoices/invoices.service";
+import { RoomsService } from "../rooms/rooms.service";
 
 /** Read-only management reports built from invoices, ledgers, payments and bookings. */
 @Injectable()

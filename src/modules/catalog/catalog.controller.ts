@@ -1,6 +1,6 @@
 import { Controller, Get, Header } from "@nestjs/common";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
-import { ADDONS, PROMOS, RATE_PLANS } from "@/domain/pricing/catalog";
+import { ADDONS, PROMOS, RATE_PLANS } from "../../domain/pricing/catalog";
 
 @ApiTags("Catalog (public)")
 @Controller("catalog")

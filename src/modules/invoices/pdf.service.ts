@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { PDFDocument, rgb, type PDFFont, type PDFPage } from "pdf-lib";
 import fontkit from "@pdf-lib/fontkit";
-import { amountInWords } from "@/domain/tax";
+import { amountInWords } from "../../domain/tax";
 import type { Invoice, Ledger, Payment } from "./invoice.types";
 
 const INK = rgb(0.08, 0.09, 0.1);

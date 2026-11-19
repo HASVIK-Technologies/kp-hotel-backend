@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { amountInWords, computeInvoice, DEFAULT_TAX_RULES, gstinChecksumOk, paise, resolveRate } from "@/domain/tax";
+import { amountInWords, computeInvoice, DEFAULT_TAX_RULES, gstinChecksumOk, paise, resolveRate } from "../src/domain/tax";
 
 const opts = { rules: DEFAULT_TAX_RULES, hotelStateCode: "09" };
 

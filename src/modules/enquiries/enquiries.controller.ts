@@ -1,8 +1,8 @@
 import { Body, Controller, Get, HttpCode, Param, Patch, Post, UseGuards } from "@nestjs/common";
 import { ApiBody, ApiCookieAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { ZodValidationPipe } from "nestjs-zod";
-import { RequirePermission } from "@/common/decorators/require-permission.decorator";
-import { StaffGuard } from "@/modules/auth/guards/staff.guard";
+import { RequirePermission } from "../../common/decorators/require-permission.decorator";
+import { StaffGuard } from "../auth/guards/staff.guard";
 import { CreateEnquiryDto, NewsletterDto, UpdateEnquiryDto } from "./dto/enquiry.dto";
 import { EnquiriesService } from "./enquiries.service";
 

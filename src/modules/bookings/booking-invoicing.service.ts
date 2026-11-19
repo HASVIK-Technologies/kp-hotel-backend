@@ -1,15 +1,15 @@
 import { Injectable } from "@nestjs/common";
-import { AppConfig } from "@/config/app-config.service";
-import { BookingException } from "@/common/errors/app.exception";
-import { bookingLineItems } from "@/domain/pricing/pricing";
-import { TokensService } from "@/modules/auth/tokens.service";
-import { CustomersService } from "@/modules/customers/customers.service";
-import { InvoicesService } from "@/modules/invoices/invoices.service";
-import type { Invoice, Party } from "@/modules/invoices/invoice.types";
-import { MailService } from "@/modules/mail/mail.service";
-import { MailTemplates } from "@/modules/mail/mail.templates";
-import { SettingsService } from "@/modules/settings/settings.service";
-import { StorageService } from "@/modules/storage/storage.service";
+import { AppConfig } from "../../config/app-config.service";
+import { BookingException } from "../../common/errors/app.exception";
+import { bookingLineItems } from "../../domain/pricing/pricing";
+import { TokensService } from "../auth/tokens.service";
+import { CustomersService } from "../customers/customers.service";
+import { InvoicesService } from "../invoices/invoices.service";
+import type { Invoice, Party } from "../invoices/invoice.types";
+import { MailService } from "../mail/mail.service";
+import { MailTemplates } from "../mail/mail.templates";
+import { SettingsService } from "../settings/settings.service";
+import { StorageService } from "../storage/storage.service";
 import { BookingsRepository, type StoredBooking } from "./bookings.repository";
 import { toPublicBooking } from "./booking.mapper";
 

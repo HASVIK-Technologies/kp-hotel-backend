@@ -1,7 +1,7 @@
 import { Controller, Get, Header, Param } from "@nestjs/common";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
-import { addDaysIso } from "@/common/utils/time.util";
-import { istToday } from "@/common/utils/time.util";
+import { addDaysIso } from "../../common/utils/time.util";
+import { istToday } from "../../common/utils/time.util";
 import { InventoryService } from "./inventory.service";
 import { RoomsService } from "./rooms.service";
 import type { PublicRoom, Room } from "./room.types";

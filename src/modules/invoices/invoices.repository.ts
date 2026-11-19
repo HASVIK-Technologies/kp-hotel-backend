@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService } from "@/database/prisma.service";
-import { stripKeys } from "@/common/utils/storage-item.util";
+import { PrismaService } from "../../database/prisma.service";
+import { stripKeys } from "../../common/utils/storage-item.util";
 import type { Invoice, Ledger, Payment } from "./invoice.types";
 
 /**

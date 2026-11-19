@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
-import { AppConfig } from "@/config/app-config.service";
+import { AppConfig } from "../../config/app-config.service";
 
 /**
  * Object storage for invoice PDFs. Local: filesystem. AWS: S3 bucket with Object Lock

@@ -1,15 +1,15 @@
 import { Injectable } from "@nestjs/common";
-import { AppConfig } from "@/config/app-config.service";
-import { BillingException } from "@/common/errors/app.exception";
-import { BookingsRepository } from "@/modules/bookings/bookings.repository";
-import { BookingInvoicingService } from "@/modules/bookings/booking-invoicing.service";
-import { BookingsService } from "@/modules/bookings/bookings.service";
-import { CashfreeService } from "@/modules/gateway/cashfree.service";
-import { PaymentOrdersRepository } from "@/modules/gateway/payment-orders.repository";
-import { InvoiceDeliveryService } from "@/modules/invoices/invoice-delivery.service";
-import { InvoicesService } from "@/modules/invoices/invoices.service";
-import { LedgerService, type RecordPaymentInput } from "@/modules/invoices/ledger.service";
-import type { GatewayPayment } from "@/modules/gateway/cashfree.service";
+import { AppConfig } from "../../config/app-config.service";
+import { BillingException } from "../../common/errors/app.exception";
+import { BookingsRepository } from "../bookings/bookings.repository";
+import { BookingInvoicingService } from "../bookings/booking-invoicing.service";
+import { BookingsService } from "../bookings/bookings.service";
+import { CashfreeService } from "../gateway/cashfree.service";
+import { PaymentOrdersRepository } from "../gateway/payment-orders.repository";
+import { InvoiceDeliveryService } from "../invoices/invoice-delivery.service";
+import { InvoicesService } from "../invoices/invoices.service";
+import { LedgerService, type RecordPaymentInput } from "../invoices/ledger.service";
+import type { GatewayPayment } from "../gateway/cashfree.service";
 
 export interface SettleResult {
   status: "PAID" | "PENDING" | "FAILED" | "NOT_FOUND";

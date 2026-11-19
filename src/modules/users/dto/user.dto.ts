@@ -1,7 +1,7 @@
 import { createZodDto } from "nestjs-zod";
 import { z } from "zod";
-import { ROLES } from "@/common/constants/permissions";
-import { emailSchema, nameSchema } from "@/common/validation/primitives";
+import { ROLES } from "../../../common/constants/permissions";
+import { emailSchema, nameSchema } from "../../../common/validation/primitives";
 
 export const createUserSchema = z.object({
   email: emailSchema,

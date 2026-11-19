@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
-import { AppConfig } from "@/config/app-config.service";
-import { NotFoundAppException } from "@/common/errors/app.exception";
-import { TokensService } from "@/modules/auth/tokens.service";
-import { MailService } from "@/modules/mail/mail.service";
-import { MailTemplates } from "@/modules/mail/mail.templates";
-import { StorageService } from "@/modules/storage/storage.service";
+import { AppConfig } from "../../config/app-config.service";
+import { NotFoundAppException } from "../../common/errors/app.exception";
+import { TokensService } from "../auth/tokens.service";
+import { MailService } from "../mail/mail.service";
+import { MailTemplates } from "../mail/mail.templates";
+import { StorageService } from "../storage/storage.service";
 import { InvoicesService } from "./invoices.service";
 import type { Invoice, Ledger, Payment } from "./invoice.types";
 

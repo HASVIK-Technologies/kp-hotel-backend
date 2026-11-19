@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService } from "@/database/prisma.service";
-import type { Role } from "@/common/constants/permissions";
+import { PrismaService } from "../../database/prisma.service";
+import type { Role } from "../../common/constants/permissions";
 
 export interface UserRecord {
   email: string;

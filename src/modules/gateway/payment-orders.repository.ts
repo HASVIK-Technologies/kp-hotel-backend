@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService } from "@/database/prisma.service";
+import { PrismaService } from "../../database/prisma.service";
 
 export type OrderTarget = { kind: "booking"; ref: string } | { kind: "invoice"; id: string };
 export interface OrderMapping {

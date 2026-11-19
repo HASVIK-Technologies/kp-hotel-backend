@@ -1,7 +1,7 @@
 import { createZodDto } from "nestjs-zod";
 import { z } from "zod";
-import { namedDto } from "@/common/validation/named-dto";
-import { isoDateSchema, moneySchema, optionalText } from "@/common/validation/primitives";
+import { namedDto } from "../../../common/validation/named-dto";
+import { isoDateSchema, moneySchema, optionalText } from "../../../common/validation/primitives";
 
 const common = {
   amount: moneySchema,

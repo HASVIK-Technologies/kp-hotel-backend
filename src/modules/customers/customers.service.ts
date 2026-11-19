@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { DuplicateException, NotFoundAppException } from "@/common/errors/app.exception";
+import { DuplicateException, NotFoundAppException } from "../../common/errors/app.exception";
 import { CustomersRepository } from "./customers.repository";
 import type { Customer } from "./customer.types";
 
