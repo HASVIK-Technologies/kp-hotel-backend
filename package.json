@@ -4,6 +4,7 @@
   "private": true,
   "description": "Hotel KP & Restaurant — NestJS REST API (bookings, GST billing, payments)",
   "scripts": {
+    "postinstall": "prisma generate",
     "start:dev": "nest start --watch",
     "start": "nest start",
     "build": "prisma generate && nest build",
