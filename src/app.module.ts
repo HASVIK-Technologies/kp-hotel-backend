@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
 import { APP_FILTER, APP_PIPE } from "@nestjs/core";
 import { ZodValidationPipe } from "nestjs-zod";
-import { AllExceptionsFilter } from "@/common/filters/all-exceptions.filter";
+import { AllExceptionsFilter } from "./common/filters/all-exceptions.filter";
 import { ConfigModule } from "@/config/config.module";
 import { DatabaseModule } from "@/database/database.module";
 import { AuditModule } from "@/modules/audit/audit.module";
