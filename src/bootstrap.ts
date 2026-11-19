@@ -43,8 +43,21 @@ export async function createApp(): Promise<NestExpressApplication> {
     maxAge: 600,
   });
 
-  if (!config.isProd) {
-    SwaggerModule.setup("api/docs", app, buildOpenApiDocument(app), { jsonDocumentUrl: "api/docs-json" });
+  // if (!config.isProd) {
+  //   SwaggerModule.setup("api/docs", app, buildOpenApiDocument(app), { jsonDocumentUrl: "api/docs-json" });
+  // }
+  const enableSwagger =
+  !config.isProd || process.env.ENABLE_SWAGGER === "true";
+
+  if (enableSwagger) {
+    SwaggerModule.setup(
+      "api/docs",
+      app,
+      buildOpenApiDocument(app),
+      {
+        jsonDocumentUrl: "/api/docs-json",
+      },
+    );
   }
   return app;
 }
