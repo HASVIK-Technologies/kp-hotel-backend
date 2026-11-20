@@ -10,7 +10,7 @@ import { CSRF_HEADER } from "./common/constants/http";
 
 const LOCAL_ORIGIN = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\]|192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+)(:\d+)?$/;
 
-/** OpenAPI 3 document for the whole API (served at /api/docs; also used to generate docs/API.md). */
+/** OpenAPI 3 document for the whole API (served at /swagger; also used to generate docs/API.md). */
 export function buildOpenApiDocument(app: NestExpressApplication) {
   const doc = SwaggerModule.createDocument(
     app,
@@ -44,18 +44,18 @@ export async function createApp(): Promise<NestExpressApplication> {
   });
 
   // if (!config.isProd) {
-  //   SwaggerModule.setup("api/docs", app, buildOpenApiDocument(app), { jsonDocumentUrl: "api/docs-json" });
+  //   SwaggerModule.setup("swagger", app, buildOpenApiDocument(app), { jsonDocumentUrl: "swagger-json" });
   // }
   const enableSwagger =
   !config.isProd || process.env.ENABLE_SWAGGER === "true";
 
   if (enableSwagger) {
     SwaggerModule.setup(
-      "api/docs",
+      "swagger",
       app,
       buildOpenApiDocument(app),
       {
-        jsonDocumentUrl: "/api/docs-json",
+        jsonDocumentUrl: "/swagger-json",
       },
     );
   }

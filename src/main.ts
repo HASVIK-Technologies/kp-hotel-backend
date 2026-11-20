@@ -19,7 +19,7 @@ async function main() {
 
   const port = app.get(AppConfig).env.PORT;
   await app.listen(port);
-  logger.log(`API on http://localhost:${port}/api/v1  ·  docs http://localhost:${port}/api/docs  ·  gateway: ${process.env.CASHFREE_MODE}`);
+  logger.log(`API on http://localhost:${port}/api/v1  ·  docs http://localhost:${port}/swagger  ·  gateway: ${process.env.CASHFREE_MODE}`);
 }
 
 main().catch((e) => {
