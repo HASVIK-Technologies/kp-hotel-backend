@@ -25,7 +25,13 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
   const rewrittenUrl = new URL(req.url ?? "/", "http://localhost");
   const originalPath = rewrittenUrl.searchParams.get("__vercel_path");
 
-  if (!originalPath || !(originalPath === "/api" || originalPath.startsWith("/api/"))) {
+  const isApiPath = originalPath === "/api" || originalPath?.startsWith("/api/");
+  const isSwaggerPath =
+    originalPath === "/swagger" ||
+    originalPath?.startsWith("/swagger/") ||
+    originalPath === "/swagger-json";
+
+  if (!isApiPath && !isSwaggerPath) {
     res.statusCode = 400;
     res.end("Invalid Vercel rewrite path");
     return;

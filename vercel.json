@@ -12,6 +12,18 @@
     {
       "source": "/api/:path*",
       "destination": "/api?__vercel_path=/api/:path*"
+    },
+    {
+      "source": "/swagger",
+      "destination": "/api?__vercel_path=/swagger"
+    },
+    {
+      "source": "/swagger/:path*",
+      "destination": "/api?__vercel_path=/swagger/:path*"
+    },
+    {
+      "source": "/swagger-json",
+      "destination": "/api?__vercel_path=/swagger-json"
     }
   ]
 }
